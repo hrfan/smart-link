@@ -1,0 +1,9 @@
+.claude/
+.obsidian/
+__pycache__/
+*.pyc
+*.bak
+*.bak.*
+.env
+.DS_Store
+Thumbs.db

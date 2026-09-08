@@ -1,0 +1,430 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "provider": {
+    "dces-anthropic": {
+      "npm": "@ai-sdk/anthropic",
+      "name": "神州博海·GATEWAY",
+      "options": {
+        "baseURL": "{env:DCES_GATEWAY_URL}/anthropic/v1",
+        "apiKey": "{env:DCES_API_KEY}"
+      },
+      "models": {
+        "kimi/k3": {
+          "name": "Kimi K3",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 8192
+            }
+          },
+          "variants": {
+            "max": {
+              "options": {
+                "thinking": {
+                  "type": "enabled",
+                  "budgetTokens": 16384
+                }
+              }
+            }
+          }
+        },
+        "kimi/k2p7": {
+          "name": "Kimi K2.7 Code",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 8192
+            }
+          },
+          "variants": {
+            "max": {
+              "options": {
+                "thinking": {
+                  "type": "enabled",
+                  "budgetTokens": 16384
+                }
+              }
+            }
+          }
+        },
+        "kimi/kimi-for-coding-highspeed": {
+          "name": "Kimi HighSpeed",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 262144,
+            "output": 32768
+          },
+          "options": {
+            "thinking": {
+              "type": "enabled",
+              "budgetTokens": 8192
+            }
+          }
+        }
+      }
+    },
+    "dces-openai": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "神州博海·GATEWAY",
+      "options": {
+        "baseURL": "{env:DCES_GATEWAY_URL}/openai/v1",
+        "apiKey": "{env:DCES_API_KEY}"
+      },
+      "models": {
+        "zai/glm-5.3": {
+          "name": "GLM-5.3",
+          "reasoning": true,
+          "tool_call": true,
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          }
+        },
+        "zai/glm-5.3-flash": {
+          "name": "GLM-5.3 Flash",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 1048576,
+            "output": 131072
+          }
+        }
+      }
+    },
+    "dces-gpt": {
+      "npm": "@ai-sdk/openai",
+      "name": "神州博海·GATEWAY",
+      "options": {
+        "baseURL": "{env:DCES_GATEWAY_URL}/openai/v1",
+        "apiKey": "{env:DCES_API_KEY}",
+        "setCacheKey": true
+      },
+      "models": {
+        "s2a/gpt-6-astra": {
+          "name": "GPT-6 Astra",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 300000,
+            "input": 250000,
+            "output": 128000
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "forceReasoning": true
+          },
+          "variants": {
+            "low": {
+              "options": {
+                "reasoningEffort": "low"
+              }
+            },
+            "medium": {
+              "options": {
+                "reasoningEffort": "medium"
+              }
+            },
+            "high": {
+              "options": {
+                "reasoningEffort": "high"
+              }
+            },
+            "xhigh": {
+              "options": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            "max": {
+              "options": {
+                "reasoningEffort": "max"
+              }
+            }
+          }
+        },
+        "s2a/gpt-5.6-terra": {
+          "name": "GPT-5.6 Terra",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 300000,
+            "input": 250000,
+            "output": 128000
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "forceReasoning": true
+          },
+          "variants": {
+            "low": {
+              "options": {
+                "reasoningEffort": "low"
+              }
+            },
+            "medium": {
+              "options": {
+                "reasoningEffort": "medium"
+              }
+            },
+            "high": {
+              "options": {
+                "reasoningEffort": "high"
+              }
+            },
+            "xhigh": {
+              "options": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            "max": {
+              "options": {
+                "reasoningEffort": "max"
+              }
+            }
+          }
+        },
+        "s2a/gpt-5.6-sol": {
+          "name": "GPT-5.6 Sol",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 300000,
+            "input": 250000,
+            "output": 128000
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "forceReasoning": true
+          },
+          "variants": {
+            "low": {
+              "options": {
+                "reasoningEffort": "low"
+              }
+            },
+            "medium": {
+              "options": {
+                "reasoningEffort": "medium"
+              }
+            },
+            "high": {
+              "options": {
+                "reasoningEffort": "high"
+              }
+            },
+            "xhigh": {
+              "options": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            "max": {
+              "options": {
+                "reasoningEffort": "max"
+              }
+            }
+          }
+        },
+        "s2a/gpt-5.6-luna": {
+          "name": "GPT-5.6 Luna",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 300000,
+            "input": 250000,
+            "output": 128000
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "forceReasoning": true
+          },
+          "variants": {
+            "low": {
+              "options": {
+                "reasoningEffort": "low"
+              }
+            },
+            "medium": {
+              "options": {
+                "reasoningEffort": "medium"
+              }
+            },
+            "high": {
+              "options": {
+                "reasoningEffort": "high"
+              }
+            },
+            "xhigh": {
+              "options": {
+                "reasoningEffort": "xhigh"
+              }
+            },
+            "max": {
+              "options": {
+                "reasoningEffort": "max"
+              }
+            }
+          }
+        },
+        "s2a/gpt-5.5": {
+          "name": "GPT-5.5",
+          "reasoning": true,
+          "tool_call": true,
+          "attachment": true,
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "limit": {
+            "context": 384000,
+            "input": 250000,
+            "output": 128000
+          },
+          "options": {
+            "reasoningEffort": "medium",
+            "forceReasoning": true
+          },
+          "variants": {
+            "low": {
+              "options": {
+                "reasoningEffort": "low"
+              }
+            },
+            "medium": {
+              "options": {
+                "reasoningEffort": "medium"
+              }
+            },
+            "high": {
+              "options": {
+                "reasoningEffort": "high"
+              }
+            },
+            "xhigh": {
+              "options": {
+                "reasoningEffort": "xhigh"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "mcp": {
+    "dces_mcp": {
+      "type": "remote",
+      "url": "{env:DCES_GATEWAY_URL}/mcp",
+      "headers": {
+        "Authorization": "Bearer {env:DCES_API_KEY}"
+      }
+    }
+  }
+}
